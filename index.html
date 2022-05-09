@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>スロットゲーム</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    
+<header>
+  <h1>Slot Machine</h1>
+</header>
+
+
+<section class="outline">
+    <div class="toumei">
+
+    <div class="slot" id="slot1">1</div>
+    <br />
+    <input type="button" value="スタート" id="start1" />
+    <input type="button" value="ストップ" id="stop1"/>
+
+    <br />
+
+
+    <div class="slot" id="slot2">1</div>
+    <br />
+    <input type="button" value="スタート" id="start2" />
+    <input type="button" value="ストップ" id="stop2"/>
+
+    <br />
+
+
+    <div class="slot" id="slot3">1</div>
+    <br />
+    <input type="button" value="スタート" id="start3" />
+    <input type="button" value="ストップ" id="stop3"/>
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+<script>
+
+let slot;
+
+      // slotを開始
+      $(`#start1`).on(`click`, function start(){
+
+        slot = setInterval(function() {
+
+          // 1〜9の範囲でランダムな数値を作成
+          
+          let num = Math.floor( Math.random() * 10 ) ;
+          
+          // slot
+          document.getElementById("slot1").innerHTML = num;
+        });
+      })
+ 
+      // slotを停止
+
+      $(`#stop1`).on(`click`, function stop(){
+        if(slot) {
+          clearInterval(slot);
+        }
+      })
+  
+
+
+      
+        $(`#start2`).on(`click`, function start() {
+
+          slot = setInterval(function () {
+
+            // 1〜9の範囲でランダムな数値を作成
+
+            let num = Math.floor(Math.random() * 10);
+
+            // slot
+            document.getElementById("slot2").innerHTML = num;
+          });
+        })
+
+        // slotを停止
+
+        $(`#stop2`).on(`click`, function stop() {
+          if (slot) {
+            clearInterval(slot);
+          }
+        })
+
+
+
+
+  $(`#start3`).on(`click`, function start() {
+
+    slot = setInterval(function () {
+
+      // 1〜9の範囲でランダムな数値を作成
+
+      let num = Math.floor(Math.random() * 10);
+
+      // slot
+      document.getElementById("slot3").innerHTML = num;
+    });
+  })
+
+  // slotを停止
+
+  $(`#stop3`).on(`click`, function stop() {
+    if (slot) {
+      clearInterval(slot);
+    }
+  })
+
+
+
+
+
+  
+</script>
+
+</body>
+</html>

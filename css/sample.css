@@ -1,0 +1,53 @@
+
+
+.outline{
+
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../img/jackpod.jpg);
+  background-repeat:  no-repeat; 
+  background-position:center center; 
+  border-radius: 50%;
+  
+  /* //background-size = contain → 背景画像全体が見える */
+  background-size:contain; 
+  
+
+}
+
+h1{
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 40px;
+}
+
+.toumei{
+  background-color: rgba(255, 255, 255, 0.562);
+}
+
+
+header {
+  text-align: center;
+  width: auto;
+  font-weight: bold;
+  
+
+}
+
+.outline {
+    text-align:center;
+    color: red;
+    
+  }
+
+
+  .slot {
+    display: inline-block;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size:40px;
+    width:60px;
+  }
+
+  input{
+    font-size: 8px;
+  }
