@@ -14,35 +14,44 @@
 </head>
 <body>
 
+<audio>
+    <source src="./music/ルーレット.mp3">
+    <p>オーディオ機能未対応です</p>
+  </audio>
+
     
 <header>
   <h1>Slot Machine</h1>
+
 </header>
 
 
 <section class="outline">
     <div class="toumei">
 
+   <input type="button" value="スタート" id="start" class="button_strt" />
+   <br />
+      
     <div class="slot" id="slot1">1</div>
     <br />
-    <input type="button" value="スタート" id="start1" />
-    <input type="button" value="ストップ" id="stop1"/>
+
+    <input type="button" value="ストップ" id="stop1" class="button_stp"/>
 
     <br />
 
 
     <div class="slot" id="slot2">1</div>
     <br />
-    <input type="button" value="スタート" id="start2" />
-    <input type="button" value="ストップ" id="stop2"/>
+    <!-- <input type="button" value="スタート" id="start" /> -->
+    <input type="button" value="ストップ" id="stop2" class="button_stp"/>
 
     <br />
 
 
     <div class="slot" id="slot3">1</div>
     <br />
-    <input type="button" value="スタート" id="start3" />
-    <input type="button" value="ストップ" id="stop3"/>
+    <!-- <input type="button" value="スタート" id="start" /> -->
+    <input type="button" value="ストップ" id="stop3" class="button_stp"/>
   </div>
 
 
@@ -59,9 +68,9 @@
 let slot;
 
       // slotを開始
-      $(`#start1`).on(`click`, function start(){
+      $(`#start`).on(`click`, function start(){
 
-        slot = setInterval(function() {
+        slot1 = setInterval(function() {
 
           // 1〜9の範囲でランダムな数値を作成
           
@@ -75,17 +84,17 @@ let slot;
       // slotを停止
 
       $(`#stop1`).on(`click`, function stop(){
-        if(slot) {
-          clearInterval(slot);
+        if(slot1) {
+          clearInterval(slot1);
         }
       })
   
 
 
       
-        $(`#start2`).on(`click`, function start() {
+        $(`#start`).on(`click`, function start() {
 
-          slot = setInterval(function () {
+          slot2 = setInterval(function () {
 
             // 1〜9の範囲でランダムな数値を作成
 
@@ -99,17 +108,17 @@ let slot;
         // slotを停止
 
         $(`#stop2`).on(`click`, function stop() {
-          if (slot) {
-            clearInterval(slot);
+          if (slot2) {
+            clearInterval(slot2);
           }
         })
 
 
 
 
-  $(`#start3`).on(`click`, function start() {
+  $(`#start`).on(`click`, function start() {
 
-    slot = setInterval(function () {
+    slot3 = setInterval(function () {
 
       // 1〜9の範囲でランダムな数値を作成
 
@@ -123,8 +132,8 @@ let slot;
   // slotを停止
 
   $(`#stop3`).on(`click`, function stop() {
-    if (slot) {
-      clearInterval(slot);
+    if (slot3) {
+      clearInterval(slot3);
     }
   })
 

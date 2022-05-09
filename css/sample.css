@@ -17,14 +17,21 @@
 }
 
 h1{
+  /* ウェブフォント・グーグル */
+
   font-family: 'Oleo Script Swash Caps', cursive;
   font-size: 40px;
 }
 
 .toumei{
+/* outlineで挿入した背景画像に、白っぽい透明な層を透過効果を出している */
   background-color: rgba(255, 255, 255, 0.562);
 }
 
+
+.button_strt{
+background: gold;  
+}
 
 header {
   text-align: center;
