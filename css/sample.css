@@ -2,13 +2,16 @@
 
 .outline{
 
-  width: 800px;
+  width: 500px;
+  height:300px;
   margin-left: auto;
   margin-right: auto;
   background-image: url(../img/jackpod.jpg);
   background-repeat:  no-repeat; 
   background-position:center center; 
-  border-radius: 50%;
+  border-radius: 20%;
+  text-align:center;
+  color: red;
   
   /* //background-size = contain → 背景画像全体が見える */
   background-size:contain; 
@@ -26,11 +29,14 @@ h1{
 .toumei{
 /* outlineで挿入した背景画像に、白っぽい透明な層を透過効果を出している */
   background-color: rgba(255, 255, 255, 0.562);
+  width: 100%;
+  height: 100%;
+
 }
 
 
 .button_strt{
-background: gold;  
+  background: gold;  
 }
 
 header {
@@ -38,15 +44,16 @@ header {
   width: auto;
   font-weight: bold;
   
-
 }
 
-.outline {
-    text-align:center;
-    color: red;
+  .card{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
     
-  }
 
+  }
 
   .slot {
     display: inline-block;
