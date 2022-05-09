@@ -9,13 +9,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- webフォント -->
 <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&display=swap" rel="stylesheet">
 
+ <!-- Bootstrap CSS
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+
 </head>
+
 <body>
 
 <audio>
-    <source src="./music/ルーレット.mp3">
+    <source src="./music/ルーレット.mp3" id="bgm">
     <p>オーディオ機能未対応です</p>
   </audio>
 
@@ -27,49 +33,38 @@
 
 
 <section class="outline">
-    <div class="toumei">
-   
-  <br />
-   <input type="button" value="スタート" id="start" class="button_strt" />
-   <br />
-      
-   <div class="card">
-     <div class="card_s1">
-     
-    <div class="slot" id="slot1">1</div>
-    <br />
-
-    <input type="button" value="ストップ" id="stop1" class="button_stp"/>
+  <div class="toumei">
     
-  </div>
-  
-
-
-
-    <div class="card_s2">
-     
-    <div class="slot" id="slot2">1</div>
     <br />
-    <input type="button" value="ストップ" id="stop2" class="button_stp"/>
-
-  </div>
-
-
-
-    <div class="card_s3">
-
-    <div class="slot" id="slot3">1</div>
+    <input type="button" value="スタート" id="start" class="button_strt" />
     <br />
-    <input type="button" value="ストップ" id="stop3" class="button_stp"/>
-  </div>
-</div>
+    
+    <div class="card">
 
-</div>
+      <div class="card_s1">
+        <div class="slot" id="slot1">1</div>
+        <br />
+        <input type="button" value="ストップ" id="stop1" class="button_stp" />
+      </div>
+
+      <div class="card_s2">
+        <div class="slot" id="slot2">1</div>
+        <br />
+        <input type="button" value="ストップ" id="stop2" class="button_stp" />
+      </div>
+
+      <div class="card_s3">
+        <div class="slot" id="slot3">1</div>
+        <br />
+        <input type="button" value="ストップ" id="stop3" class="button_stp" />
+      </div>
+    </div>
+
+    <input type="button" value="もう一回" id="reload" class="button_re" />
+
+
+  </div>
 </section>
-
-
-
-
 
 
 <script>
@@ -79,6 +74,7 @@ let slot;
       // slotを開始
       $(`#start`).on(`click`, function start(){
 
+
         slot1 = setInterval(function() {
 
           // 1〜9の範囲でランダムな数値を作成
@@ -87,6 +83,11 @@ let slot;
           
           // slot
           document.getElementById("slot1").innerHTML = num;
+
+          if(slot1){        
+            // bgmを再生する
+            bgm.play();
+          }
         });
       })
  
@@ -147,7 +148,11 @@ let slot;
   })
 
 
-
+   //再読み込みボタン
+   $('#reload').on('click',function(){
+                window.location.reload();
+            });
+        
 
 
   
