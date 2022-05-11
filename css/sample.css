@@ -1,11 +1,19 @@
 
 body{
+  position: absolute;
   width: 1200px;
+  background: #FFFACD;
+  background-image: url(../img/yd_kubota1.jpg);
+  
+  
 }
-.outline{
 
-  width: 500px;
-  height:300px;
+
+.outline{
+  position: relative;
+  width: 1000px;
+  height:560px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   background-image: url(../img/jackpod.jpg);
@@ -14,6 +22,8 @@ body{
   border-radius: 20%;
   text-align:center;
   color: red;
+  overflow: hidden;
+  
   
   /* //background-size = contain → 背景画像全体が見える */
   background-size:contain; 
@@ -23,9 +33,9 @@ body{
 
 h1{
   /* ウェブフォント・グーグル */
-
+  margin: 0px 0px;
   font-family: 'Oleo Script Swash Caps', cursive;
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .toumei{
@@ -33,6 +43,7 @@ h1{
   background-color: rgba(255, 255, 255, 0.562);
   width: 100%;
   height: 100%;
+  border-radius: 20%;
 
 }
 
@@ -65,10 +76,10 @@ header {
   .slot {
     display: inline-block;
     font-family: 'Oleo Script Swash Caps', cursive;
-    font-size:40px;
+    font-size:60px;
     width:60px;
   }
 
   input{
-    font-size: 8px
+    font-size: 14px
   }

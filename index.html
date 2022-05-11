@@ -16,14 +16,16 @@
  <!-- Bootstrap CSS
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
 
+
 </head>
 
 <body>
 
-<audio>
-    <source src="./music/ルーレット.mp3" id="bgm">
-    <p>オーディオ機能未対応です</p>
-  </audio>
+  <audio controls>
+    <source src="../slotmachine/music/roulet.mp3">
+  </audio>  
+
+
 
     
 <header>
@@ -64,7 +66,21 @@
 
 
   </div>
+
+  <!-- サウンドファイル -->
+  <audio id="startsound" preload="auto">
+    <source src="../slotmachine/music/slot.mp3" type="audio/mp3">
+    </audio>
+  
+    <audio id="stopsound" preload="auto">
+      <source src="../slotmachine/music/stop.mp3" type="audio/mp3">
+      </audio>
+
+
 </section>
+
+
+
 
 
 <script>
@@ -74,7 +90,6 @@ let slot;
       // slotを開始
       $(`#start`).on(`click`, function start(){
 
-
         slot1 = setInterval(function() {
 
           // 1〜9の範囲でランダムな数値を作成
@@ -83,13 +98,9 @@ let slot;
           
           // slot
           document.getElementById("slot1").innerHTML = num;
-
-          if(slot1){        
-            // bgmを再生する
-            bgm.play();
-          }
-        });
-      })
+          })       
+        })
+      
  
       // slotを停止
 
@@ -139,6 +150,7 @@ let slot;
     });
   })
 
+
   // slotを停止
 
   $(`#stop3`).on(`click`, function stop() {
@@ -146,6 +158,35 @@ let slot;
       clearInterval(slot3);
     }
   })
+
+
+
+
+//音を出す
+//startの音
+
+$(`#start`).on(`click`, function start(){
+
+document.getElementById("startsound").play();
+})
+
+//stopの音
+
+
+$(`#stop1`).on(`click`, function stop() {
+  document.getElementById("stopsound").play();
+  })
+
+$(`#stop2`).on(`click`, function stop() { 
+  document.getElementById("stopsound").play();
+})
+
+
+$(`#stop3`).on(`click`, function stop() {
+  document.getElementById("stopsound").play();
+})
+
+
 
 
    //再読み込みボタン
